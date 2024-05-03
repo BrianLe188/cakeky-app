@@ -1,8 +1,16 @@
-import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, TouchableOpacityProps, StyleProp, ViewStyle } from 'react-native';
+import React from "react";
+import {
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  TouchableOpacityProps,
+  StyleProp,
+  ViewStyle,
+} from "react-native";
 
-type CKButtonIconPosition = 'left' | 'right';
-type CKButtonVariant = 'main' | 'success' | 'danger' | 'info' | 'warn';
+type CKButtonIconPosition = "left" | "right";
+type CKButtonVariant = "main" | "success" | "danger" | "info" | "warn";
+
 interface ICKButtonProps extends TouchableOpacityProps {
   title?: string;
   icon?: React.ReactNode;
@@ -13,33 +21,36 @@ interface ICKButtonProps extends TouchableOpacityProps {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#FD76A7',
+    backgroundColor: "#FD76A7",
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 5,
-    justifyContent: 'center',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    columnGap: 10,
   },
   buttonText: {
-    color: 'white',
+    color: "white",
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 
   mainButton: {
-    backgroundColor: '#FD76A7',
+    backgroundColor: "#FD76A7",
   },
   successButton: {
-    backgroundColor: 'green',
+    backgroundColor: "green",
   },
   dangerButton: {
-    backgroundColor: 'red',
+    backgroundColor: "red",
   },
   infoButton: {
-    backgroundColor: 'blue',
+    backgroundColor: "blue",
   },
   warnButton: {
-    backgroundColor: 'yellow',
+    backgroundColor: "yellow",
   },
 });
 
@@ -51,14 +62,24 @@ const buttonClasses: { [key in CKButtonVariant]: StyleProp<ViewStyle> } = {
   warn: styles.warnButton,
 };
 
-export default function CKButton({ title, icon, iconPosition = 'right', variant = 'main', onPress, style, ...props }: ICKButtonProps) {
+export default function CKButton({
+  title,
+  icon,
+  iconPosition = "right",
+  variant = "main",
+  onPress,
+  style,
+  ...props
+}: ICKButtonProps) {
   return (
-    <TouchableOpacity style={[styles.button, buttonClasses[variant]]} onPress={onPress} {...props}>
-      {icon && iconPosition === 'left' && icon}
+    <TouchableOpacity
+      style={[styles.button, buttonClasses[variant]]}
+      onPress={onPress}
+      {...props}
+    >
+      {icon && iconPosition === "left" && icon}
       {title && <Text style={styles.buttonText}>{title}</Text>}
-      {icon && iconPosition === 'right' && icon}
+      {icon && iconPosition === "right" && icon}
     </TouchableOpacity>
-  )
+  );
 }
-
-
