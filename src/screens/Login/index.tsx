@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import CKButton from "../../components/CKButton";
+import CKButton from "src/components/CKButton";
 
 export default function Login() {
   const handlePress = () => {
