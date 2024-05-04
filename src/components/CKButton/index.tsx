@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     columnGap: 10,
   },
-  buttonText: {
+  buttonTitle: {
     color: "white",
     fontSize: 16,
     fontWeight: "bold",
@@ -54,13 +54,14 @@ const styles = StyleSheet.create({
   },
 });
 
-const buttonClasses: { [key in CKButtonVariant]: StyleProp<ViewStyle> } = {
-  main: styles.mainButton,
-  success: styles.successButton,
-  danger: styles.dangerButton,
-  info: styles.infoButton,
-  warn: styles.warnButton,
-};
+const buttonVariantStyles: { [key in CKButtonVariant]: StyleProp<ViewStyle> } =
+  {
+    main: styles.mainButton,
+    success: styles.successButton,
+    danger: styles.dangerButton,
+    info: styles.infoButton,
+    warn: styles.warnButton,
+  };
 
 export default function CKButton({
   title,
@@ -73,12 +74,12 @@ export default function CKButton({
 }: ICKButtonProps) {
   return (
     <TouchableOpacity
-      style={[styles.button, buttonClasses[variant]]}
+      style={[styles.button, buttonVariantStyles[variant]]}
       onPress={onPress}
       {...props}
     >
       {icon && iconPosition === "left" && icon}
-      {title && <Text style={styles.buttonText}>{title}</Text>}
+      {title && <Text style={styles.buttonTitle}>{title}</Text>}
       {icon && iconPosition === "right" && icon}
     </TouchableOpacity>
   );

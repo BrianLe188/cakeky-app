@@ -1,7 +1,14 @@
-import React from 'react';
-import { TouchableOpacity, Image, StyleSheet, TouchableOpacityProps, StyleProp, ViewStyle } from 'react-native';
+import React from "react";
+import {
+  TouchableOpacity,
+  Image,
+  StyleSheet,
+  TouchableOpacityProps,
+  StyleProp,
+  ViewStyle,
+} from "react-native";
 
-type CKAvatarSize = 'sm' | 'md' | 'lg';
+type CKAvatarSize = "sm" | "md" | "lg";
 interface ICKAvatarProps extends TouchableOpacityProps {
   uri?: string;
   size?: CKAvatarSize;
@@ -11,11 +18,11 @@ interface ICKAvatarProps extends TouchableOpacityProps {
 const styles = StyleSheet.create({
   container: {
     borderRadius: 50,
-    overflow: 'hidden',
+    overflow: "hidden",
   },
   avatar: {
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
   },
   small: {
     width: 40,
@@ -28,18 +35,28 @@ const styles = StyleSheet.create({
   large: {
     width: 80,
     height: 80,
-  }
+  },
 });
 
-const avatarStyle: { [key in CKAvatarSize]: StyleProp<ViewStyle> } = {
+const avatarSizeStyles: { [key in CKAvatarSize]: StyleProp<ViewStyle> } = {
   sm: styles.small,
   md: styles.medium,
   lg: styles.large,
 };
 
-export default function CKAvatar({ uri, size = 'sm', onPress, style, ...props }: ICKAvatarProps) {
+export default function CKAvatar({
+  uri,
+  size = "sm",
+  onPress,
+  style,
+  ...props
+}: ICKAvatarProps) {
   return (
-    <TouchableOpacity onPress={onPress} style={[styles.container, avatarStyle[size]]} {...props}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={[styles.container, avatarSizeStyles[size]]}
+      {...props}
+    >
       <Image source={{ uri }} style={styles.avatar} />
     </TouchableOpacity>
   );
