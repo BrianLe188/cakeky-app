@@ -1,6 +1,7 @@
 import { View } from "react-native";
 import CKAvatar from "src/components/CKAvatar";
 import CKButton from "src/components/CKButton";
+import CKInput from "src/components/CKInput";
 
 export default function Login() {
   const handlePress = () => {
@@ -19,11 +20,34 @@ export default function Login() {
       <CKButton title="Tiếp tục" onPress={handlePress} variant="info" />
       <CKButton title="Tiếp tục" onPress={handlePress} variant="warn" />
 
+      <CKButton title="Tiếp tục" onPress={handlePress} variant="main" />
+
       {/* Avatar Component */}
-      <View style={{ alignItems: 'center', marginTop: 20 }}>
-        <CKAvatar uri={'https://i.pinimg.com/564x/2b/0f/7a/2b0f7a9533237b7e9b49f62ba73b95dc.jpg'} size='sm' onPress={handleAvatar} />
-        <CKAvatar uri={'https://i.pinimg.com/564x/2b/0f/7a/2b0f7a9533237b7e9b49f62ba73b95dc.jpg'} size='md' onPress={handleAvatar} />
-        <CKAvatar uri={'https://i.pinimg.com/564x/2b/0f/7a/2b0f7a9533237b7e9b49f62ba73b95dc.jpg'} size='lg' onPress={handleAvatar} />
+      <View style={{ alignItems: "center", marginTop: 20 }}>
+        <CKAvatar
+          uri={
+            "https://i.pinimg.com/564x/2b/0f/7a/2b0f7a9533237b7e9b49f62ba73b95dc.jpg"
+          }
+          size="sm"
+          onPress={handleAvatar}
+        />
+        <CKAvatar
+          uri={
+            "https://i.pinimg.com/564x/2b/0f/7a/2b0f7a9533237b7e9b49f62ba73b95dc.jpg"
+          }
+          size="md"
+          onPress={handleAvatar}
+        />
+        <CKAvatar
+          uri={
+            "https://i.pinimg.com/564x/2b/0f/7a/2b0f7a9533237b7e9b49f62ba73b95dc.jpg"
+          }
+          size="lg"
+          onPress={handleAvatar}
+        />
+      </View>
+      <View style={{ alignItems: "center", marginTop: 20 }}>
+        <CKInput placeholder="hahah" />
       </View>
     </View>
   );

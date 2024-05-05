@@ -4,11 +4,11 @@ import {
   Image,
   StyleSheet,
   TouchableOpacityProps,
-  StyleProp,
-  ViewStyle,
 } from "react-native";
+import { StyleGroup } from "src/utils/types";
 
 type CKAvatarSize = "sm" | "md" | "lg";
+
 interface ICKAvatarProps extends TouchableOpacityProps {
   uri?: string;
   size?: CKAvatarSize;
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const avatarSizeStyles: { [key in CKAvatarSize]: StyleProp<ViewStyle> } = {
+const avatarSizeStyles: StyleGroup<CKAvatarSize> = {
   sm: styles.small,
   md: styles.medium,
   lg: styles.large,

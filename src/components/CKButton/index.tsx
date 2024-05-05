@@ -4,9 +4,9 @@ import {
   Text,
   StyleSheet,
   TouchableOpacityProps,
-  StyleProp,
-  ViewStyle,
 } from "react-native";
+import { COLORS } from "src/utils/constants";
+import { StyleGroup } from "src/utils/types";
 
 type CKButtonIconPosition = "left" | "right";
 type CKButtonVariant = "main" | "success" | "danger" | "info" | "warn";
@@ -22,7 +22,6 @@ interface ICKButtonProps extends TouchableOpacityProps {
 const styles = StyleSheet.create({
   button: {
     backgroundColor: "#FD76A7",
-    paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 5,
     display: "flex",
@@ -30,38 +29,37 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     columnGap: 10,
+    height: 50,
   },
   buttonTitle: {
     color: "white",
     fontSize: 16,
     fontWeight: "bold",
   },
-
   mainButton: {
-    backgroundColor: "#FD76A7",
+    backgroundColor: COLORS.main.pink,
   },
   successButton: {
-    backgroundColor: "green",
+    backgroundColor: COLORS.success,
   },
   dangerButton: {
-    backgroundColor: "red",
+    backgroundColor: COLORS.danger,
   },
   infoButton: {
-    backgroundColor: "blue",
+    backgroundColor: COLORS.info,
   },
   warnButton: {
-    backgroundColor: "yellow",
+    backgroundColor: COLORS.warn,
   },
 });
 
-const buttonVariantStyles: { [key in CKButtonVariant]: StyleProp<ViewStyle> } =
-  {
-    main: styles.mainButton,
-    success: styles.successButton,
-    danger: styles.dangerButton,
-    info: styles.infoButton,
-    warn: styles.warnButton,
-  };
+const buttonVariantStyles: StyleGroup<CKButtonVariant> = {
+  main: styles.mainButton,
+  success: styles.successButton,
+  danger: styles.dangerButton,
+  info: styles.infoButton,
+  warn: styles.warnButton,
+};
 
 export default function CKButton({
   title,
