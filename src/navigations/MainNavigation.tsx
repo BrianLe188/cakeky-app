@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import ROUTES from "../utils/routes";
 import AuthNavigation from "./AuthNavigation";
+import { ROUTES } from "src/utils/constants";
 
 const MainStack = createNativeStackNavigator();
 

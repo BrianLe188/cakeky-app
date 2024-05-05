@@ -7,3 +7,9 @@ export const COLORS = {
   info: "blue",
   warn: "yellow",
 };
+
+export const ROUTES = {
+  AUTH: "Auth",
+  LOGIN: "Login",
+  REGISTER: "Register",
+};
