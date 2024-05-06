@@ -1,3 +1,4 @@
+import { StyleGroup } from "@utils/types/global";
 import React from "react";
 import {
   TouchableOpacity,
@@ -5,7 +6,6 @@ import {
   StyleSheet,
   TouchableOpacityProps,
 } from "react-native";
-import { StyleGroup } from "src/utils/types";
 
 type CKAvatarSize = "sm" | "md" | "lg";
 

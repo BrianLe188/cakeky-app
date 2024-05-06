@@ -1,3 +1,5 @@
+import { COLORS } from "@utils/constants/global";
+import { StyleGroup } from "@utils/types/global";
 import {
   StyleSheet,
   Text,
@@ -5,8 +7,6 @@ import {
   TextInputProps,
   View,
 } from "react-native";
-import { COLORS } from "src/utils/constants";
-import { StyleGroup } from "src/utils/types";
 
 type CKInputSize = "sm" | "md" | "lg";
 type CKInputVariant = "underline" | "outlined" | "nude";
@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     paddingVertical: 9,
     paddingHorizontal: 20,
     borderRadius: 5,
+    backgroundColor: "#fff",
   },
   small: {
     height: 40,
@@ -83,6 +84,7 @@ export default function CKInput({
   size = "md",
   label,
   status = "none",
+  style,
   ...props
 }: ICKInputProps) {
   return (
@@ -94,6 +96,7 @@ export default function CKInput({
           inputSizeStyles[size],
           inputVariantStyles[variant],
           inputStatusStyles[status],
+          style,
         ]}
         {...props}
       />
