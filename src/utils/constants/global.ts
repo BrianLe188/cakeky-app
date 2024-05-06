@@ -13,3 +13,7 @@ export const ROUTES = {
   LOGIN: "Login",
   REGISTER: "Register",
 };
+
+export const TEXTS = {
+  LOGIN: "Đăng nhập",
+};

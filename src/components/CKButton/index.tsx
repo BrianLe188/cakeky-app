@@ -1,3 +1,5 @@
+import { COLORS } from "@utils/constants/global";
+import { StyleGroup } from "@utils/types/global";
 import React from "react";
 import {
   TouchableOpacity,
@@ -5,8 +7,6 @@ import {
   StyleSheet,
   TouchableOpacityProps,
 } from "react-native";
-import { COLORS } from "src/utils/constants";
-import { StyleGroup } from "src/utils/types";
 
 type CKButtonIconPosition = "left" | "right";
 type CKButtonVariant = "main" | "success" | "danger" | "info" | "warn";
@@ -72,7 +72,7 @@ export default function CKButton({
 }: ICKButtonProps) {
   return (
     <TouchableOpacity
-      style={[styles.button, buttonVariantStyles[variant]]}
+      style={[styles.button, buttonVariantStyles[variant], style]}
       onPress={onPress}
       {...props}
     >

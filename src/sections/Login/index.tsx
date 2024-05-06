@@ -1,46 +1,102 @@
-import { View } from "react-native";
-import CKAvatar from "src/components/CKAvatar";
-import CKButton from "src/components/CKButton";
-import CKInput from "src/components/CKInput";
+import CKButton from "@components/CKButton";
+import CKInput from "@components/CKInput";
+import { TEXTS } from "@utils/constants/global";
+import React from "react";
+import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
+import { TITLE } from "./constants";
+
+const screenHeight = Dimensions.get("window").height;
+const screenWidth = Dimensions.get("window").width;
 
 export default function LoginSection() {
   return (
-    <View style={{ marginTop: 100 }}>
-      <CKButton title="Tiếp tục" onPress={() => {}} variant="main" />
-      <CKButton title="Tiếp tục" onPress={() => {}} variant="success" />
-      <CKButton title="Tiếp tục" onPress={() => {}} variant="danger" />
-      <CKButton title="Tiếp tục" onPress={() => {}} variant="info" />
-      <CKButton title="Tiếp tục" onPress={() => {}} variant="warn" />
-
-      <CKButton title="Tiếp tục" onPress={() => {}} variant="main" />
-
-      {/* Avatar Component */}
-      <View style={{ alignItems: "center", marginTop: 20 }}>
-        <CKAvatar
-          uri={
-            "https://i.pinimg.com/564x/2b/0f/7a/2b0f7a9533237b7e9b49f62ba73b95dc.jpg"
-          }
-          size="sm"
-          onPress={() => {}}
-        />
-        <CKAvatar
-          uri={
-            "https://i.pinimg.com/564x/2b/0f/7a/2b0f7a9533237b7e9b49f62ba73b95dc.jpg"
-          }
-          size="md"
-          onPress={() => {}}
-        />
-        <CKAvatar
-          uri={
-            "https://i.pinimg.com/564x/2b/0f/7a/2b0f7a9533237b7e9b49f62ba73b95dc.jpg"
-          }
-          size="lg"
-          onPress={() => {}}
+    <View style={styles.page}>
+      <View style={styles.decorBall} />
+      <View style={[styles.screenBackground]}>
+        <Image
+          style={styles.imageWelcome}
+          source={require("@assets/images/login-welcome.png")}
         />
       </View>
-      <View style={{ alignItems: "center", marginTop: 20 }}>
-        <CKInput placeholder="hahah" />
+      <View style={styles.formLogin}>
+        <Text style={styles.title}>{TITLE}</Text>
+        <View style={styles.fieldWrapper}>
+          <CKInput
+            placeholder="example@gmail.com"
+            variant="nude"
+            keyboardType="email-address"
+          />
+          <CKInput placeholder="******" variant="nude" secureTextEntry />
+          <CKButton
+            title={TEXTS.LOGIN}
+            style={styles.loginButton}
+            onPress={() => {}}
+            variant="main"
+          />
+        </View>
       </View>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  page: {
+    flex: 1,
+    width: screenWidth,
+    height: screenHeight,
+  },
+  screenBackground: {
+    backgroundColor: "#FCD1E3",
+    alignItems: "center",
+    position: "relative",
+    width: "100%",
+    height: "100%",
+  },
+  imageWelcome: {
+    marginTop: 100,
+  },
+  formLogin: {
+    width: "100%",
+    height: "55%",
+    backgroundColor: "#FFECFB",
+    borderTopLeftRadius: 120,
+    borderTopRightRadius: 120,
+    position: "absolute",
+    bottom: 0,
+    zIndex: 1,
+  },
+  fieldWrapper: {
+    paddingLeft: 30,
+    paddingRight: 30,
+    paddingTop: 30,
+    display: "flex",
+    alignItems: "center",
+    rowGap: 30,
+  },
+  title: {
+    textAlign: "center",
+    fontSize: 30,
+    marginTop: 30,
+  },
+  loginButton: {
+    width: "80%",
+  },
+  decorBall: {
+    width: 77,
+    height: 77,
+    position: "absolute",
+    top: 100,
+    left: 50,
+    zIndex: 1,
+    backgroundColor: "#97D4FF",
+    borderRadius: 100,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 5,
+    elevation: 8,
+  },
+});
