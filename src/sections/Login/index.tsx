@@ -1,14 +1,21 @@
 import CKButton from "@components/CKButton";
 import CKInput from "@components/CKInput";
-import { TEXTS } from "@utils/constants/global";
+import { ROUTES, TEXTS } from "@utils/constants/global";
 import React from "react";
 import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import { TITLE } from "./constants";
+import { IScreenProps } from "@utils/types/global";
 
 const screenHeight = Dimensions.get("window").height;
 const screenWidth = Dimensions.get("window").width;
 
-export default function LoginSection() {
+interface ILoginSectionProps extends IScreenProps {}
+
+export default function LoginSection({ navigation }: ILoginSectionProps) {
+  const handleLogin = () => {
+    navigation.navigate(ROUTES.HOME);
+  };
+
   return (
     <View style={styles.page}>
       <View style={styles.decorBall} />
@@ -30,7 +37,7 @@ export default function LoginSection() {
           <CKButton
             title={TEXTS.LOGIN}
             style={styles.loginButton}
-            onPress={() => {}}
+            onPress={handleLogin}
             variant="main"
           />
         </View>
