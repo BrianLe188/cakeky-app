@@ -12,6 +12,7 @@ export const ROUTES = {
   AUTH: "Auth",
   LOGIN: "Login",
   REGISTER: "Register",
+  HOME: "Home",
 };
 
 export const TEXTS = {
