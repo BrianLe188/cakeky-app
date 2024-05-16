@@ -1,11 +1,7 @@
-import CKButton from "@components/CKButton";
-import type { IconLib, IconName } from "./types";
-import Icon from "./Icon";
-import {
-  OpaqueColorValue,
-  StyleSheet,
-  TouchableOpacityProps,
-} from "react-native";
+import type { IconLib, IconName } from './types';
+import Icon from './Icon';
+import { OpaqueColorValue, StyleSheet, TouchableOpacityProps } from 'react-native';
+import CKButton from '../CKButton';
 
 interface ICKIconProps extends TouchableOpacityProps {
   name: IconName;
@@ -19,16 +15,16 @@ const styles = StyleSheet.create({
   button: {
     paddingHorizontal: 2,
     paddingVertical: 1,
-    height: "auto",
-    backgroundColor: "transparent",
+    height: 'auto',
+    backgroundColor: 'transparent',
   },
 });
 
 export default function CKIcon({
   name,
   size = 24,
-  lib = "FontAwesome",
-  color = "black",
+  lib = 'FontAwesome',
+  color = 'black',
   style,
   onPress,
 }: ICKIconProps) {

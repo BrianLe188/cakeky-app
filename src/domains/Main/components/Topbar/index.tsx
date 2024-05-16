@@ -1,6 +1,6 @@
-import CKAvatar from '@components/CKAvatar';
-import CKIcon from '@components/CKIcon';
-import { COLORS } from '@utils/constants/global';
+import CKAvatar from '@share/components/CKAvatar';
+import CKIcon from '@share/components/CKIcon';
+import { COLORS } from '@share/utils/constants/global';
 import { StyleSheet, View } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -10,18 +10,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 10,
+    alignItems: 'center',
   },
 });
 
-var a= 6;
 export default function Topbar() {
-  const onPress = () => { 
+  const onPress = () => {
     console.log('12123');
   };
 
   return (
     <View style={styles.container}>
-      <CKIcon name="chevron-with-circle-left" lib="Entypo" onPress={() => onPress()} />
+      <CKIcon name="chevron-back" lib="Ionicons" onPress={() => onPress()} />
       <View style={{ display: 'flex', flexDirection: 'row', gap: 20 }}>
         <CKIcon name="shopping-cart" onPress={() => onPress()} color={COLORS.main.pink} />
         <CKIcon name="bell" onPress={() => onPress()} color={COLORS.main.pink} />

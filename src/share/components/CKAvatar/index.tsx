@@ -1,13 +1,8 @@
-import { StyleGroup } from "@utils/types/global";
-import React from "react";
-import {
-  TouchableOpacity,
-  Image,
-  StyleSheet,
-  TouchableOpacityProps,
-} from "react-native";
+import { StyleGroup } from '@share/utils/types/global';
+import React from 'react';
+import { TouchableOpacity, Image, StyleSheet, TouchableOpacityProps } from 'react-native';
 
-type CKAvatarSize = "sm" | "md" | "lg";
+type CKAvatarSize = 'sm' | 'md' | 'lg';
 
 interface ICKAvatarProps extends TouchableOpacityProps {
   uri?: string;
@@ -18,11 +13,11 @@ interface ICKAvatarProps extends TouchableOpacityProps {
 const styles = StyleSheet.create({
   container: {
     borderRadius: 50,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   avatar: {
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '100%',
   },
   small: {
     width: 40,
@@ -44,13 +39,7 @@ const avatarSizeStyles: StyleGroup<CKAvatarSize> = {
   lg: styles.large,
 };
 
-export default function CKAvatar({
-  uri,
-  size = "sm",
-  onPress,
-  style,
-  ...props
-}: ICKAvatarProps) {
+export default function CKAvatar({ uri, size = 'sm', onPress, style, ...props }: ICKAvatarProps) {
   return (
     <TouchableOpacity
       onPress={onPress}

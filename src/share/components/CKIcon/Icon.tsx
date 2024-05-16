@@ -9,7 +9,7 @@ interface IIconProps {
   color: string | OpaqueColorValue;
 }
 
-export default function Icon({ lib, ...props }: IIconProps) {
+export default function Icon({ lib = 'FontAwesome', ...props }: IIconProps) {
   switch (lib) {
     case 'FontAwesome':
       return <FontAwesome {...props} name={props.name as TFontAwesome} />;

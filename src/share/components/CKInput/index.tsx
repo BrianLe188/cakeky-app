@@ -1,16 +1,10 @@
-import { COLORS } from "@utils/constants/global";
-import { StyleGroup } from "@utils/types/global";
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  TextInputProps,
-  View,
-} from "react-native";
+import { COLORS } from '@share/utils/constants/global';
+import { StyleGroup } from '@share/utils/types/global';
+import { StyleSheet, Text, TextInput, TextInputProps, View } from 'react-native';
 
-type CKInputSize = "sm" | "md" | "lg";
-type CKInputVariant = "underline" | "outlined" | "nude";
-type CKInputStatus = "success" | "error" | "none";
+type CKInputSize = 'sm' | 'md' | 'lg';
+type CKInputVariant = 'underline' | 'outlined' | 'nude';
+type CKInputStatus = 'success' | 'error' | 'none';
 
 interface ICKInputProps extends TextInputProps {
   variant?: CKInputVariant;
@@ -21,15 +15,15 @@ interface ICKInputProps extends TextInputProps {
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
+    width: '100%',
   },
   input: {
     borderWidth: 1,
-    width: "100%",
+    width: '100%',
     paddingVertical: 9,
     paddingHorizontal: 20,
     borderRadius: 5,
-    backgroundColor: "#fff",
+    backgroundColor: '#fff',
   },
   small: {
     height: 40,
@@ -80,10 +74,10 @@ const inputStatusStyles: StyleGroup<CKInputStatus> = {
 };
 
 export default function CKInput({
-  variant = "outlined",
-  size = "md",
+  variant = 'outlined',
+  size = 'md',
   label,
-  status = "none",
+  status = 'none',
   style,
   ...props
 }: ICKInputProps) {

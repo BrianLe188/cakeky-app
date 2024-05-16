@@ -1,34 +1,31 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "allowJs": true,          /* Allow javascript files to be compiled. */
-    "checkJs": true,          /* Report errors in .js files. */
-    "noEmit": true,   
+    "allowJs": true /* Allow javascript files to be compiled. */,
+    "checkJs": true /* Report errors in .js files. */,
+    "noEmit": true,
     "strict": true,
     "baseUrl": ".",
     "paths": {
       "@assets/*": ["./assets/*"],
-      "@components/*": ["./src/components/*"],
       "@navigations/*": ["./src/navigations/*"],
-      "@screens/*": ["./src/screens/*"],
-      "@services/*": ["./src/services/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@sections/*": ["./src/sections/*"]
+      "@domains/*": ["./src/domains/*"],
+      "@share/*": ["./src/share/*"]
     }
   },
-   "target": "esnext",
-    "module": "commonjs",
-    "lib": ["es6"],
-    "allowJs": true,
-    "jsx": "react-native",
-    "noEmit": true,
-    "incremental": true,
-    "isolatedModules": true,
+  "target": "esnext",
+  "module": "commonjs",
+  "lib": ["es6"],
+  "allowJs": true,
+  "jsx": "react-native",
+  "noEmit": true,
+  "incremental": true,
+  "isolatedModules": true,
 
-    "strict": true,
+  "strict": true,
 
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-   "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
+  "moduleResolution": "node",
+  "resolveJsonModule": true,
+  "allowSyntheticDefaultImports": true,
+  "esModuleInterop": true
 }

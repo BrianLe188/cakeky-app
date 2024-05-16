@@ -1,17 +1,17 @@
-import CKButton from "@components/CKButton";
-import CKInput from "@components/CKInput";
-import { ROUTES, TEXTS } from "@utils/constants/global";
-import React from "react";
-import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
-import { TITLE } from "./constants";
-import { IScreenProps } from "@utils/types/global";
+import CKButton from 'src/share/components/CKButton';
+import CKInput from 'src/share/components/CKInput';
+import React from 'react';
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
+import { TITLE } from '../constants';
+import { IScreenProps } from '@share/utils/types/global';
+import { ROUTES, TEXTS } from '@share/utils/constants/global';
 
-const screenHeight = Dimensions.get("window").height;
-const screenWidth = Dimensions.get("window").width;
+const screenHeight = Dimensions.get('window').height;
+const screenWidth = Dimensions.get('window').width;
 
-interface ILoginSectionProps extends IScreenProps {}
+interface ILoginTemplateProps extends IScreenProps {}
 
-export default function LoginSection({ navigation }: ILoginSectionProps) {
+export default function LoginTemplate({ navigation }: ILoginTemplateProps) {
   const handleLogin = () => {
     navigation.navigate(ROUTES.HOME);
   };
@@ -20,19 +20,12 @@ export default function LoginSection({ navigation }: ILoginSectionProps) {
     <View style={styles.page}>
       <View style={styles.decorBall} />
       <View style={[styles.screenBackground]}>
-        <Image
-          style={styles.imageWelcome}
-          source={require("@assets/images/login-welcome.png")}
-        />
+        <Image style={styles.imageWelcome} source={require('@assets/images/login-welcome.png')} />
       </View>
       <View style={styles.formLogin}>
         <Text style={styles.title}>{TITLE}</Text>
         <View style={styles.fieldWrapper}>
-          <CKInput
-            placeholder="example@gmail.com"
-            variant="nude"
-            keyboardType="email-address"
-          />
+          <CKInput placeholder="example@gmail.com" variant="nude" keyboardType="email-address" />
           <CKInput placeholder="******" variant="nude" secureTextEntry />
           <CKButton
             title={TEXTS.LOGIN}
@@ -53,22 +46,22 @@ const styles = StyleSheet.create({
     height: screenHeight,
   },
   screenBackground: {
-    backgroundColor: "#FCD1E3",
-    alignItems: "center",
-    position: "relative",
-    width: "100%",
-    height: "100%",
+    backgroundColor: '#FCD1E3',
+    alignItems: 'center',
+    position: 'relative',
+    width: '100%',
+    height: '100%',
   },
   imageWelcome: {
     marginTop: 100,
   },
   formLogin: {
-    width: "100%",
-    height: "55%",
-    backgroundColor: "#FFECFB",
+    width: '100%',
+    height: '55%',
+    backgroundColor: '#FFECFB',
     borderTopLeftRadius: 120,
     borderTopRightRadius: 120,
-    position: "absolute",
+    position: 'absolute',
     bottom: 0,
     zIndex: 1,
   },
@@ -76,28 +69,28 @@ const styles = StyleSheet.create({
     paddingLeft: 30,
     paddingRight: 30,
     paddingTop: 30,
-    display: "flex",
-    alignItems: "center",
+    display: 'flex',
+    alignItems: 'center',
     rowGap: 30,
   },
   title: {
-    textAlign: "center",
+    textAlign: 'center',
     fontSize: 30,
     marginTop: 30,
   },
   loginButton: {
-    width: "80%",
+    width: '80%',
   },
   decorBall: {
     width: 77,
     height: 77,
-    position: "absolute",
+    position: 'absolute',
     top: 100,
     left: 50,
     zIndex: 1,
-    backgroundColor: "#97D4FF",
+    backgroundColor: '#97D4FF',
     borderRadius: 100,
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 4,
