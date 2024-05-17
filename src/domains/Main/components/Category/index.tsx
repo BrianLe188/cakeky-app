@@ -2,29 +2,11 @@ import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import CKIcon from '@share/components/CKIcon';
 
-interface ICategory {
+interface ICategoryProps {
   text: string;
   imageUri: string;
   checked?: boolean;
 }
-
-export default function Category({ text, imageUri, checked = false }: ICategory) {
-  return (
-    <View style={styles.container}>
-      <Image
-        source={{ uri: imageUri }}
-        style={styles.image}
-      />
-      {
-        checked && <View style={styles.tick}>
-          <CKIcon name="check" size={10} color="white" />
-        </View>
-      }
-
-      <Text style={styles.text}>{text}</Text>
-    </View>
-  );
-};
 
 const styles = StyleSheet.create({
   container: {
@@ -33,7 +15,8 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: 'white',
     borderRadius: 50,
-    position: 'relative'
+    position: 'relative',
+    alignSelf: 'flex-start',
   },
   image: {
     width: 20,
@@ -56,3 +39,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+export default function Category({ text, imageUri, checked = false }: ICategoryProps) {
+  return (
+    <View style={styles.container}>
+      <Image source={{ uri: imageUri }} style={styles.image} />
+      {checked && (
+        <View style={styles.tick}>
+          <CKIcon name="check" size={10} color="white" />
+        </View>
+      )}
+      <Text style={styles.text}>{text}</Text>
+    </View>
+  );
+}
