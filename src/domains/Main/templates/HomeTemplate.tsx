@@ -4,7 +4,7 @@ import { IScreenProps } from '@share/utils/types/global';
 import Category from '../components/Category';
 import SlickMenu from '../components/SlickMenu';
 import Categories from '../components/Categories';
-import CKUserAvatar from '../components/CKUserAvatar';
+import CKUserAvatar from '../../../share/components/CKUserAvatar';
 
 interface IHomeTemplateProps extends IScreenProps { }
 
