@@ -4,8 +4,9 @@ import { IScreenProps } from '@share/utils/types/global';
 import Category from '../components/Category';
 import SlickMenu from '../components/SlickMenu';
 import Categories from '../components/Categories';
+import CKUserAvatar from '../../../share/components/CKUserAvatar';
 
-interface IHomeTemplateProps extends IScreenProps {}
+interface IHomeTemplateProps extends IScreenProps { }
 
 export default function HomeTemplate({ navigation }: IHomeTemplateProps) {
   return (
@@ -14,6 +15,7 @@ export default function HomeTemplate({ navigation }: IHomeTemplateProps) {
       <SlickMenu title="Phân loại" subTitle="Xem thêm">
         <Categories />
       </SlickMenu>
+      <CKUserAvatar />
     </View>
   );
 }
