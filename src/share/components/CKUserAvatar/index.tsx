@@ -1,13 +1,12 @@
 import CKAvatar from '@share/components/CKAvatar';
 import CKIcon from '@share/components/CKIcon';
-import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 10,
     marginVertical: 20,
   },
   textContainer: {
@@ -19,7 +18,7 @@ const styles = StyleSheet.create({
   },
   ratingContainer: {
     flexDirection: 'row',
-    marginTop: 6
+    marginTop: 6,
   },
   rating: {
     fontSize: 16,
@@ -34,7 +33,11 @@ export default function CKUserAvatar() {
 
   return (
     <View style={styles.container}>
-      <CKAvatar uri="https://toigingiuvedep.vn/wp-content/uploads/2022/08/avatar-chill-anime.jpg" size="md" onPress={handlePress} />
+      <CKAvatar
+        uri="https://toigingiuvedep.vn/wp-content/uploads/2022/08/avatar-chill-anime.jpg"
+        size="md"
+        onPress={handlePress}
+      />
       <View style={styles.textContainer}>
         <Text style={styles.name}>Cake Switt</Text>
         <View style={styles.ratingContainer}>
@@ -43,5 +46,5 @@ export default function CKUserAvatar() {
         </View>
       </View>
     </View>
-  )
+  );
 }
